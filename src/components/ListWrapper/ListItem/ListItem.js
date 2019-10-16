@@ -1,16 +1,31 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './ListItem.css';
-import danAbramovImage from '../../../assets/images/danabramov.jpg';
 
-const ListItem = () => (
+const ListItem = ({
+    image,
+    name,
+    description,
+    twitterLink
+}) => (
     <li className="listItem__wrapper">
-        <img src={danAbramovImage} className="listItem__image" />
+        <img src={image} className="listItem__image" alt={name} />
         <div>
-            <h2 className="listItem__name">Kent C. Dodds</h2>
-            <p className="listItem__description">Making software development more accessible · Husband, Father, Latter-day Saint, Teacher, OSS, GDE, @TC39 · @PayPalEng @eggheadio @FrontendMasters · #JS</p>
-            <button className="listItem__button">visit twitter page</button>
+            <h2 className="listItem__name">{name}</h2>
+            <p className="listItem__description">{description}</p>
+            <a href ={twitterLink} className="listItem__button">visit twitter page</a>
         </div>
     </li>
 );
 
-export default ListItem;
+ListItem.propTypes = {
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    twitterLink: PropTypes.string.isRequired,
+}
+ListItem.defaultProps = {
+    description: 'One of the React creators',
+}
+
+export default ListItem; 
