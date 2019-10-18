@@ -1,8 +1,9 @@
 import React from 'react';
 import ListWrapper from './components/ListWrapper/ListWrapper';
+import Form from './components/Form/Form';
 import './index.css';
 
-const initialStateOperator = [
+const initialStateArrray = [
         {
         image: 'https://pbs.twimg.com/profile_images/1166344766210150401/amRnWzl-_400x400.jpg',
         name: 'Dan Abramov',
@@ -31,14 +32,24 @@ const initialStateOperator = [
 
 class App extends React.Component {
     state = {
-        items: [...initialStateOperator],
+        items: [...initialStateArrray],
     }
+
+    addItem = e => {
+        e.preventDefault()
+        console.log(e.target[0].value)
+        console.log(e.target[1].value)
+        console.log(e.target[2].value)
+        console.log(e.target[3].value)
+    }
+
     render() {
         return (
             <div>
                 <ListWrapper 
                     items={this.state.items}
                 />
+                <Form submitFn={this.addItem} />
             </div>
 
         )
