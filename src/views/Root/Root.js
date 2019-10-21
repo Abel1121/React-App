@@ -1,7 +1,10 @@
 import React from 'react';
-import List from '../components/List/List';
-import Form from '../components/Form/Form';
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import './index.css';
+import TwittersView from '../TwittersView/TwittersView';
+import NotesView from '../NotesView/NotesView';
+import ArticlesView from '../ArticlesView/ArticlesView';
+import Header from '../../components/Header/Header';
 
 const initialStateArrray = [
         {
@@ -55,12 +58,17 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
-                <List items={this.state.items} />
-                <Form submitFn={this.addItem} />
-            </div>
-
-        )
+            <BrowserRouter>
+            <>
+            <Header />
+                <Switch>
+                    <Route exact path="/" component={TwittersView} />
+                    <Route path="/articles" component={ArticlesView} />
+                    <Route path="/notes" component={NotesView} />
+                </Switch>
+                </>
+            </BrowserRouter>
+        );
     }
     
 };
