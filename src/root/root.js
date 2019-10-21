@@ -1,6 +1,6 @@
 import React from 'react';
-import ListWrapper from './components/ListWrapper/ListWrapper';
-import Form from './components/Form/Form';
+import List from '../components/List/List';
+import Form from '../components/Form/Form';
 import './index.css';
 
 const initialStateArrray = [
@@ -56,7 +56,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <ListWrapper items={this.state.items} />
+                <List items={this.state.items} />
                 <Form submitFn={this.addItem} />
             </div>
 

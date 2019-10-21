@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ListItem.module.scss';
-import Button from '../../Button/Button';
+import Button from '../Button/Button';
 
 const ListItem = ({
     image,
