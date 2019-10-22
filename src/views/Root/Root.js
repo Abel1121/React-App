@@ -72,6 +72,7 @@ class App extends React.Component {
 
     render() {
         const { isModalOpen } = this.state;
+
         return (
             <BrowserRouter>
             <>
