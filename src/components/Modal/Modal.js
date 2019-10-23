@@ -7,5 +7,6 @@ const Modal = ({ closeModalFn }) => (
         <button className={styles.closeButton} onClick={closeModalFn}></button>
         <Form />
     </div>
-)
+);
+
 export default Modal;

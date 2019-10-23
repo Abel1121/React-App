@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Input.module.scss';
 
-const Input = ({tag : Tag, name, label, maxLength}) =>(
+const Input = ({tag : Tag, name, label, maxLength, ...props}) =>(
     <div className={styles.item}>
-        <Tag type="text" id={name} name={name} placeholder=" " maxLength={maxLength} required />
+        <Tag className={Tag === 'textarea' ? styles.textarea : styles.input} type="text" id={name} name={name} placeholder=" " {...props} maxLength={maxLength} required />
         <label htmlFor={name}>{label}</label>
         <div className={styles.item__bar}></div>
     </div>

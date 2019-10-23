@@ -2,7 +2,9 @@ import React from 'react';
 import styles from './Button.module.scss';
 
 const Button = ({children, href, secondary, ...props }) => {
+
     const buttonClass = secondary ? styles.secondary : styles.button;
+
     return (
         <>
         { href ? (
@@ -13,7 +15,6 @@ const Button = ({children, href, secondary, ...props }) => {
         }
         </>
     )
-   
 };
 
 export default Button;
